@@ -44,3 +44,24 @@ Open PowerShell, move to your local code directory, and activate the pre-configu
 ```powershell
 cd "C:\CODE PROJECTS\lerobot"
 .\venv_312\Scripts\activate
+```
+### 2. File Verification Layout
+The DOT submodules operate directly within LeRobot's internal runtime architecture. Verify your local workspace has these files in place:
+📁 Configuration Layer: `lerobot/common/policies/dot/configuration_dot.py`
+📁 Model Code: `lerobot/common/policies/dot/modeling_dot.py`
+
+
+### 3. Resolving pyav & conda Dependency Issues
+If you attempt to run a generic `pip install -e .`, Windows will fail looking for a requirement package named `pyav>=12.0.5.` Additionally, native conda commands will return a CommandNotFoundException if it isn't explicitly in your system paths.
+
+To bypass this safely, force install the pre-compiled wheel files under the official package name av, and bypass checking it during initialization:
+```powershell
+# Pre-install the binary package directly
+pip install av==12.3.0
+
+# Register LeRobot directly bypassing the strict check
+pip install -e . --no-dependencies
+
+# Bulk download the required runtime dependencies
+pip install datasets deepdiff diffusers einops flask gdown gymnasium h5py jsonlines numba opencv-python torch torchvision draccus cmake pymunk rerun-sdk termcolor wandb zarr
+```
