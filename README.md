@@ -51,7 +51,7 @@ The DOT submodules operate directly within LeRobot's internal runtime architectu
 📁 Model Code: `lerobot/common/policies/dot/modeling_dot.py`
 
 
-### 3. Resolving pyav & conda Dependency Issues
+### 3. Resolving `pyav` & `conda` Dependency Issues
 If you attempt to run a generic `pip install -e .`, Windows will fail looking for a requirement package named `pyav>=12.0.5.` Additionally, native conda commands will return a CommandNotFoundException if it isn't explicitly in your system paths.
 
 To bypass this safely, force install the pre-compiled wheel files under the official package name av, and bypass checking it during initialization:
@@ -65,3 +65,30 @@ pip install -e . --no-dependencies
 # Bulk download the required runtime dependencies
 pip install datasets deepdiff diffusers einops flask gdown gymnasium h5py jsonlines numba opencv-python torch torchvision draccus cmake pymunk rerun-sdk termcolor wandb zarr
 ```
+
+### 4. Direct Simulation Engine Verification (gym-pusht)
+If you encounter a `ModuleNotFoundError: No module named 'lerobot.common.envs'` , it means an external package updated your local directory. Re-register your local path and explicitly grab the simulation engine using:
+```powershell
+pip install -e . --no-dependencies
+pip install gym-pusht
+```
+
+### 📊 Running Policy Evaluation
+To verify the model weights locally and run simulation evaluation batches using our custom baseline metrics, execute the following script from the root folder:
+```powershell
+python lerobot/scripts/eval.py `
+  --policy.path=sebry4n/my_policy_dot_2 `
+  --env.type=pusht `
+  --env.task=PushT-v0 `
+  --eval.n_episodes=10 `
+  --eval.batch_size=10 `
+  --policy.override_dataset_stats=True
+```
+
+###💡 Dataset Inspections: 
+If you want to analyze the exact video frames, coordinates, and joints captured inside our custom demonstration rows, copy our dataset handle sebry4n/lerobot_rian_dataset_1_20260623_213100 directly into the [LeRobot Dataset Visualizer Space](https://huggingface.co/spaces/lerobot/visualize_dataset).
+
+
+### 📜 References & Credits
+1. Model wrapper modules adapted from [IliaLarchenko/dot_policy](https://github.com/IliaLarchenko/dot_policy).
+2. Built upon the open-source [huggingface/lerobot](https://github.com/huggingface/lerobot) robotics repository.
