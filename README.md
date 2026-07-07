@@ -11,7 +11,7 @@ Our current project objective is to train and evaluate an imitation learning pol
 * **🤖 Our Trained Model:** [sebry4n/my_policy_dot_2 on Hugging Face](https://huggingface.co/sebry4n/my_policy_dot_2)
 * **📊 Our Custom Demonstration Dataset:** [sebry4n/lerobot_rian_dataset_1_20260623_213100](https://huggingface.co/datasets/sebry4n/lerobot_rian_dataset_1_20260623_213100)
 * **📺 Dataset Visualization Space:** [LeRobot Dataset Visualizer](https://huggingface.co/spaces/lerobot/visualize_dataset)
-* **📽️ Demo Video of Model Implementation:** [LeRobot Model Implementation Video](https://drive.google.com/file/d/1MHl58Vlw251wVrGCPqCBgenpCS8_rJu0/view?usp=sharing)
+* **📽️ Demo Video of Model Implementation:** [LeRobot Model Implementation Video](https://drive.google.com/file/d/1og-42bjEB8PcujE0k-aXTGUBgd46ZnhX/view?usp=sharing)
 
 ---
 
