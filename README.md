@@ -1,4 +1,4 @@
-# LeRobot DOT Policy — 3D Pick and Place (Red Cube to Rectangle)
+# LeRobot DOT Policy 3D Pick and Place (Red Cube to Rectangle)
 
 Team development repository for validating the **Decoder-Only Transformer (DOT) Policy** inside the **LeRobot** ecosystem.
 
