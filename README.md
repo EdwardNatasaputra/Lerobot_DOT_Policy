@@ -228,26 +228,6 @@ Notes:
 * `--fps` — control rate; lower for CPU inference.
 * Add `--device=cpu` if running without a GPU.
 
-### DAgger rollout (collect corrections)
-
-Gather autonomous rollouts with teleop correction into a new dataset:
-
-```bash
-lerobot-rollout \
-    --strategy.type=dagger \
-    --strategy.record_autonomous=true \
-    --strategy.num_episodes=50 \
-    --policy.path=sebry4n/my_policy_dot \
-    --robot.type=so100_follower \
-    --robot.port=/dev/ttyACM0 \
-    --robot.cameras="{top : {type: opencv, index_or_path: '/dev/video4', width: 640, height: 480, fps: 30}, wrist : {type: opencv, index_or_path: '/dev/video0', width: 640, height: 480, fps: 30}}" \
-    --teleop.type=so101_leader \
-    --teleop.port=/dev/ttyACM1 \
-    --dataset.repo_id=sebry4n/rollout_dagger_data \
-    --display_data=true \
-    --dataset.single_task="grab red block"
-```
-
 ---
 
 ## Dataset Inspection
