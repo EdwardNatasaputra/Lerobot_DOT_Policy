@@ -6,16 +6,16 @@ Our current project objective is to train and evaluate an imitation learning pol
 
 ---
 
-## 🔗 Project Resources & Hub Links
+## Project Resources & Hub Links
 
-* **🤖 Our Trained Model:** [sebry4n/my_policy_dot_2 on Hugging Face](https://huggingface.co/sebry4n/my_policy_dot_2)
-* **📊 Our Custom Demonstration Dataset:** [sebry4n/lerobot_rian_dataset_1_20260623_213100](https://huggingface.co/datasets/sebry4n/lerobot_rian_dataset_1_20260623_213100)
-* **📺 Dataset Visualization Space:** [LeRobot Dataset Visualizer](https://huggingface.co/spaces/lerobot/visualize_dataset)
-* **📽️ Demo Video of Model Implementation:** [LeRobot Model Implementation Video](https://drive.google.com/file/d/1og-42bjEB8PcujE0k-aXTGUBgd46ZnhX/view?usp=sharing)
+* **Our Trained Model:** [sebry4n/my_policy_dot_2 on Hugging Face](https://huggingface.co/sebry4n/my_policy_dot_2)
+* **Our Custom Demonstration Dataset:** [sebry4n/lerobot_rian_dataset_1_20260623_213100](https://huggingface.co/datasets/sebry4n/lerobot_rian_dataset_1_20260623_213100)
+* **Dataset Visualization Space:** [LeRobot Dataset Visualizer](https://huggingface.co/spaces/lerobot/visualize_dataset)
+* **Demo Video of Model Implementation:** [LeRobot Model Implementation Video](https://drive.google.com/file/d/1og-42bjEB8PcujE0k-aXTGUBgd46ZnhX/view?usp=sharing)
 
 ---
 
-## 🗺️ Repository Architecture & Upstream Tracking
+## Repository Architecture & Upstream Tracking
 
 This repository is a **fork** of the original work by Ilia Larchenko. To understand how changes flow, keep these definitions in mind:
 
@@ -26,7 +26,7 @@ This repository is a **fork** of the original work by Ilia Larchenko. To underst
 
 ---
 
-## 🎯 Task Breakdown: Pick & Place Sequence
+## Task Breakdown: Pick & Place Sequence
 
 The imitation network processes visual camera data and state vectors to output continuous joint action tracks across three distinct manipulation phases:
 1. **Approach & Grasp:** Align the gripper and clamp down securely on the small red cube.
@@ -35,45 +35,35 @@ The imitation network processes visual camera data and state vectors to output c
 
 ---
 
-## 🛠️ Team Local Environment Setup
+## Environment Setup
 
-Our workspace operates inside a local virtual environment explicitly configured to bypass standard Windows binary conflicts (such as native `pyav` / FFmpeg compilation problems).
+Our workspace operates inside a local virtual environment
 
-### 1. Activating the Sandbox Environment
+### 1. Source LeRobot
 Open PowerShell, move to your local code directory, and activate the pre-configured Python 3.12 layer:
 ```powershell
-cd "C:\CODE PROJECTS\lerobot"
-.\venv_312\Scripts\activate
+source ${HOME}$\lerobot\bin\activate
 ```
 ### 2. File Verification Layout
-The DOT submodules operate directly within LeRobot's internal runtime architecture. Verify your local workspace has these files in place:
-📁 Configuration Layer: `lerobot/common/policies/dot/configuration_dot.py`
-📁 Model Code: `lerobot/common/policies/dot/modeling_dot.py`
+The DOT submodules operate directly within LeRobot's internal runtime architecture. Verify your local workspace has these files in plac
+Configuration Layer: `lerobot/src/policies/dot/configuration_dot.py`
+Model Code: `lerobot/src/policies/dot/modeling_dot.py`
+Process Code: `lerobot/src/policies/dot/processor_dot.py`
 
 
 ### 3. Resolving `pyav` & `conda` Dependency Issues
-If you attempt to run a generic `pip install -e .`, Windows will fail looking for a requirement package named `pyav>=12.0.5.` Additionally, native conda commands will return a CommandNotFoundException if it isn't explicitly in your system paths.
 
-To bypass this safely, force install the pre-compiled wheel files under the official package name av, and bypass checking it during initialization:
 ```powershell
-# Pre-install the binary package directly
-pip install av==12.3.0
 
-# Register LeRobot directly bypassing the strict check
-pip install -e . --no-dependencies
-
-# Bulk download the required runtime dependencies
-pip install datasets deepdiff diffusers einops flask gdown gymnasium h5py jsonlines numba opencv-python torch torchvision draccus cmake pymunk rerun-sdk termcolor wandb zarr
 ```
 
-### 4. Direct Simulation Engine Verification (gym-pusht)
-If you encounter a `ModuleNotFoundError: No module named 'lerobot.common.envs'` , it means an external package updated your local directory. Re-register your local path and explicitly grab the simulation engine using:
+### 4. 
+
 ```powershell
-pip install -e . --no-dependencies
-pip install gym-pusht
+pip install -e .
 ```
 
-### 📊 Running Policy Evaluation
+### Running Policy Evaluation
 To verify the model weights locally and run simulation evaluation batches using our custom baseline metrics, execute the following script from the root folder:
 ```powershell
 python lerobot/scripts/eval.py `
@@ -85,10 +75,10 @@ python lerobot/scripts/eval.py `
   --policy.override_dataset_stats=True
 ```
 
-### 💡 Dataset Inspections: 
+### Dataset Inspections: 
 If you want to analyze the exact video frames, coordinates, and joints captured inside our custom demonstration rows, copy our dataset handle sebry4n/lerobot_rian_dataset_1_20260623_213100 directly into the [LeRobot Dataset Visualizer Space](https://huggingface.co/spaces/lerobot/visualize_dataset).
 
 
-### 📜 References & Credits
+### References & Credits
 1. Model wrapper modules adapted from [IliaLarchenko/dot_policy](https://github.com/IliaLarchenko/dot_policy).
 2. Built upon the open-source [huggingface/lerobot](https://github.com/huggingface/lerobot) robotics repository.
