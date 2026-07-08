@@ -3,7 +3,7 @@
 Team development repository for validating the **Decoder-Only Transformer (DOT) Policy** inside the **LeRobot** ecosystem.
 
 Project goal: train and evaluate an imitation-learning policy that drives an SO-101 arm to pick up a small red cube, carry it across a 3D workspace, and drop it inside a designated rectangular zone.
----
+
 Project members :
 * 5024231008 - THEO KAWALISA PINEM
 * 5024231009 - SULTAN SYAFIQ RAKAN
