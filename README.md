@@ -13,10 +13,10 @@ Project members :
 
 ## Project Resources & Hub Links
 
-* **Trained Model:** [sebry4n/my_policy_dot_2](https://huggingface.co/sebry4n/my_policy_dot_2)
-* **Demonstration Dataset:** [sebry4n/lerobot_rian_dataset_1_20260623_213100](https://huggingface.co/datasets/sebry4n/lerobot_rian_dataset_1_20260623_213100)
+* **Trained Model:** [sebry4n/my_policy_dot_2](https://huggingface.co/sebry4n/my_policy_dot_3)
+* **Demonstration Dataset:** [sebry4n/lerobot_rian_dataset_1_20260623_213100](https://huggingface.co/datasets/sebry4n/lerobot_rian_dataset_4_20260707_235902)
 * **Dataset Visualizer:** [LeRobot Dataset Visualizer](https://huggingface.co/spaces/lerobot/visualize_dataset)
-* **Demo Video:** [Model Implementation Video](https://drive.google.com/file/d/1og-42bjEB8PcujE0k-aXTGUBgd46ZnhX/view?usp=sharing)
+* **Demo Video:** [Model Implementation Video](https://drive.google.com/file/d/1MtTwR5n2S1YIG7vqhDzjkfisknKnvhnG/view?usp=drive_link)
 
 ---
 
