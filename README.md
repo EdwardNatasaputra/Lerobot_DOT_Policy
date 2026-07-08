@@ -5,10 +5,10 @@ Team development repository for validating the **Decoder-Only Transformer (DOT) 
 Project goal: train and evaluate an imitation-learning policy that drives an SO-101 arm to pick up a small red cube, carry it across a 3D workspace, and drop it inside a designated rectangular zone.
 ---
 Project members :
-5024231008 - THEO KAWALISA PINEM
-5024231009 - SULTAN SYAFIQ RAKAN
-5024231010 - SEBASTIAN ADIRIAN NUGRAHA
-5024231023 - EDWARD NATASAPUTRA
+* 5024231008 - THEO KAWALISA PINEM
+* 5024231009 - SULTAN SYAFIQ RAKAN
+* 5024231010 - SEBASTIAN ADIRIAN NUGRAHA
+* 5024231023 - EDWARD NATASAPUTRA
 ---
 
 ## Project Resources & Hub Links
